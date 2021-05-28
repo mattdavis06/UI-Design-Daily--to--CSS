@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Colour Palette Generator</title>
+  </head>
+  <body>
+    <section id="colour_palette">
+      <div class="container">
+        <div class="clicked-colour">
+          <h5>
+            Colour <strong class="hex-colour"></strong> copied to your clipboard
+          </h5>
+        </div>
+        <div class="colour-header">
+          <h2>Colour palette generator</h2>
+        </div>
+        <div class="colour-palette-showcase">
+          <div class="colour-value">
+            <div class="colour"></div>
+            <p class="colour-value-text"></p>
+          </div>
+          <div class="colour-value">
+            <div class="colour"></div>
+            <p class="colour-value-text"></p>
+          </div>
+          <div class="colour-value">
+            <div class="colour"></div>
+            <p class="colour-value-text"></p>
+          </div>
+          <div class="colour-value">
+            <div class="colour"></div>
+            <p class="colour-value-text"></p>
+          </div>
+          <div class="colour-value">
+            <div class="colour"></div>
+            <p class="colour-value-text"></p>
+          </div>
+          <div class="colour-value">
+            <div class="colour"></div>
+            <p class="colour-value-text"></p>
+          </div>
+        </div>
+        <div class="generate-colour">
+          <button class="btn" id="copy-button">Generate palette</button>
+
+          <p class="btn-secondary-text">
+            Or just press the &quot;Spacebar&quot; to generate new palettes.
+          </p>
+        </div>
+        <div class="instructions">
+          <p>
+            Click to copy individual colour • Press &quot;C&quot; to copy
+            palette
+          </p>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"
+      integrity="sha512-hDWGyh+Iy4Mr9AHOzUP2+Y0iVPn/BwxxaoSleEjH/i1o4EVTF/sh0/A1Syii8PWOae+uPr+T/KHwynoebSuAhw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

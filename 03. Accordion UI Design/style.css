@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400;700&display=swap');
+
+:root {
+    --warning-color: #FEF6EE;
+    --warning-brd-color: #FFC48B;
+    --advice-color: #FAFAFF;
+    --advice-brd-color: #B4B3FF;
+    --danger-color: #FFF0F3;
+    --danger-brd-color: #FFB3C0;
+    --text-color: #333F68;
+    --white-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FBFBF8;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h4 {
+    color: var(--text-color);
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-left: 5px;
+}
+
+#accordion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25vh auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 550px;
+    max-width: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 2px 5px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    margin: 5px;
+}
+
+.accordion .accordion-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.accordion .accordion-header p {
+    margin-left: 20px;
+}
+
+.accordion .accordion-header.active {
+    font-weight: 700;
+    margin-bottom: 20px;
+    transition: 1s ease;
+}
+
+.accordion-header.active + div {
+    display: block;
+    overflow: hidden;
+}
+
+.accordion-header.active .icon {
+    transform: rotate(45deg);
+    transition: transform 0.4s ease-in;
+}
+
+.accordion-panel {
+    display: none;
+    overflow: hidden;
+}
+
+.accordion-panel .accordion-list{
+    list-style-type: square;
+    padding: 0 35px;
+}
+
+.accordion-panel .accordion-list ul {
+    padding: 0 0 0 35px;
+}
+
+.accordion-panel .accordion-list li {
+    padding: 10px;
+}
+
+.accordion.accordion-warning {
+    background-color: var(--warning-color);
+    border-radius: 5px;
+    border-left: 5px solid var(--warning-brd-color);
+}
+
+.accordion.accordion-advice {
+    background-color: var(--advice-color) ;
+    border-radius: 5px;
+    border-left: 5px solid var(--advice-brd-color);
+}
+
+.accordion.accordion-danger {
+    background-color:var(--danger-color) ;
+    border-radius: 5px;
+    border-left: 5px solid var(--danger-brd-color);
+}

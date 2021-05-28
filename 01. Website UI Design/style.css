@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text-color: #1A1C38;
+    --prices-colour:#E4E6F6 ;
+    --prices-border-colour:#D2D4F0;
+    --stats-colour: #F6E4F5;
+    --stats-border-colour: #F1D2E8;
+    --tables-colour: #F9E5E5;
+    --tables-border-colour: #F6DCDD;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #F2F4FB;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    height: 80vh ;
+    overflow: hidden;
+    border: 5px solid #000;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-section {
+    width: 50%;
+    text-align: center;
+}
+
+.search-section h3 {
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.search {
+    position: relative;
+    width: 100%;
+}
+
+.search i {
+    position: absolute;
+    font-size: 30px;
+    top: 25px;
+    left: 25px;
+    color: #818191;
+}
+
+.search-section input {
+    padding: 30px 20px 30px 70px;
+    width: 100%;
+    border: 1px solid #818191;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    color:#818191;
+}
+
+.search-section input:focus {
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    color:#818191;
+}
+
+.search-section input::placeholder {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.cards {
+    margin-top: 60px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 30px 40px;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.5s ease;
+}
+
+.card h3 {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+}
+
+.card p {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.card .btn {
+    background-color: transparent;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 15px 0;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+.card .btn:focus {
+    outline: none;
+}
+
+.card .btn:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card .btn i {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.card.prices {
+    background-color: var(--prices-colour);
+}
+
+.card.prices .btn {
+    border: 1px solid var(--prices-border-colour);
+}
+
+.card.prices .btn::before {
+    content: "Calculate price changes";
+}
+
+.card.stats {
+    background-color: var(--stats-colour);
+}
+
+.card.stats .btn {
+    border: 1px solid var(--stats-border-colour);
+}
+
+.card.stats .btn::before {
+    content: "Search by name";
+}
+
+.card.tables {
+    background-color: var(--tables-colour);
+}
+
+.card.tables .btn {
+    border: 1px solid var(--tables-border-colour);
+}
+
+.card.tables .btn::before {
+    content: "Go to tables";
+}
+
+.card-white {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-color);
+}
+
+.card-white h3 {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+}
+
+.card-white p {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+@media(max-width: 1230px) {
+    .container {
+        width: 90%;
+        height: 90vh;
+    }
+
+    .search-section {
+        width: 80%;
+    }
+    .grid {
+        gap: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h3 {
+        margin-bottom: 25px;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+    }
+    
+    .card p {
+        margin-bottom: 25px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }
+
+    .card .btn {
+        padding: 5px 10px;
+        border-radius: 30px;
+        margin: 10px 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.1px;
+    }
+
+    .card-white {
+        padding: 20px;
+    }
+
+    .card-white h3 {
+        margin-bottom: 25px;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+    }
+    
+    .card-white p {
+        margin-bottom: 25px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+    }
+
+    .card-white a {
+        font-size: 0.9rem;
+    }
+}
+
+@media(max-width: 840px) {
+
+    .container {
+        padding: 0;
+    }
+    
+    .search-section h3 {
+        margin: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .cards {
+        width: 80%;
+        margin: 20px;
+    }
+
+    .card {
+        padding: 10px;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card h3 {
+        margin: 0;
+    }
+
+    .card p {
+        display: none;
+    }
+
+    .card-white {
+        display: none;
+    }
+   
+}
+
+@media(max-width: 580px) {
+
+    .container {
+        padding: 0;
+    }
+
+    .card {
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: scale(1);
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card.prices .btn, 
+    .card.stats .btn,
+    .card.tables .btn {
+        border: none;
+    }
+
+    .card.prices .btn::before {
+        content: "";
+    }
+
+    .card.stats .btn::before {
+        content: "";
+    }
+
+    .card.tables .btn::before {
+        content: "";
+    }
+
+    .card .btn i {
+        margin-left: 0;
+    } 
+}
