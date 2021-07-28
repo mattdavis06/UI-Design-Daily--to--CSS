@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:hsl(240, 50%, 16%);
+    font-family: 'IBM Plex Sans', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    background-color:#D5E8E4;
+    max-width: 80%;
+    border-radius: 10px;
+    padding: 70px 60px;
+}
+
+.title {
+    margin: 30px 0 0 20px;   
+    display: inline-block;
+    min-width: 60%;
+}
+
+.title h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;  
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1, 
+.col-2,
+.col-3 {
+    margin: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    /* border: 1px red solid; */
+}
+
+.col-1,
+.col-2 {
+    flex: 1 1 30%;
+}
+
+.col-3 {
+    flex: auto;
+    margin-top: -5%;
+}
+
+.header .percentage {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.header .header-text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    margin: 15px 0 100px 0;
+}
+
+.enrollment-dates h3 {
+    font-size: 1rem;
+    margin: 0 0 15px 10px;
+}
+
+
+.enrollment-dates ul li {   
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 8px 10px;
+    margin: 5px 0;
+}
+
+.enrollment-dates ul li.active {   
+    background-color:#C2DFD8;
+}
+
+.enrollment-dates ul li:hover {
+    background-color:#C2DFD8;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.enrollment-details-list {
+    margin-top: 25px;
+    background-color: #C2DFD8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.enrollment-details-list ul li {
+    padding: 8px 10px;
+}
+
+.enrollment-details-list small {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.enrollment-details-list span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.apply-now-wrapper {
+    padding: 30px 25px;
+    border: #fff 2px solid;
+    border-radius: 5px;
+    background-color:rgba(255, 255, 255, 0.2);
+}
+
+.apply-now-wrapper .why-us {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;  
+    margin-bottom: 30px;
+}
+
+.apply-now-wrapper ul {
+    margin-bottom: 120px;
+}
+
+.apply-now-wrapper ul li {
+    padding: 8px 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.apply-now-wrapper ul li .fas {
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.apply-now-wrapper .btn {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 16px 12px;
+    background-color: #FFA593;
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.apply-now-wrapper .btn:hover {
+    transform: scale(0.98);
+    transition: transform 0.2s ease-in-out;
+}
+
+.apply-now-wrapper .btn:focus {
+    outline: none;
+}
+
+@media(max-width: 1179px) {
+
+    body {
+        height: auto;
+    }
+
+    .container {
+        margin: 50px 0;
+        padding: 40px;
+    }
+
+    .col-3 {
+        margin-top: 10px;
+    }
+
+    .apply-now-wrapper .check-list {
+        margin-bottom: 30px;
+    }
+
+    .apply-now-wrapper ul li {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 767px) {
+    .container {
+        padding: 20px;
+    }
+    .col-1,
+    .col-2,
+    .col-3 {
+        flex: 1 1 60%;
+        margin: 10px;
+    }
+
+    .title {
+        margin-left: 10px;
+    }
+
+    .header .header-text {
+        margin-bottom: 30px;
+    }
+
+    .apply-now-wrapper ul li {
+        font-size: 0.8rem;
+    }
+
+    
+}
+
+
+
+
+
