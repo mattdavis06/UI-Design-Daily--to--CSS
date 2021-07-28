@@ -50,7 +50,6 @@ ul {
     display: flex;
     flex: 1;
     flex-direction: column;
-    /* border: 1px red solid; */
 }
 
 .col-1,
@@ -177,10 +176,35 @@ ul {
     outline: none;
 }
 
+.icon {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    font-size: 2rem;
+    color: #C2DFD8;
+    opacity: 0.7;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon a {
+    color: #C2DFD8;
+}
+
+.icon:hover {
+    opacity: 1;
+}
+
 @media(max-width: 1179px) {
 
     body {
         height: auto;
+        position: relative;
     }
 
     .container {
@@ -198,6 +222,10 @@ ul {
 
     .apply-now-wrapper ul li {
         font-size: 1rem;
+    }
+
+    .icon {
+        bottom: 5px;
     }
 }
 
