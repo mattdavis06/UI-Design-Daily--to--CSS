@@ -162,6 +162,9 @@ body {
 }
 
 @media (max-width: 680px) {
+    body {
+        overflow: auto;
+    }
 
     .colour-value{
         margin: 10px 5px;
