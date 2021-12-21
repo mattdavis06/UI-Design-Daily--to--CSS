@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Mulish:wght@600&family=Poppins:wght@500&display=swap');
+
+:root {
+    /* Fonts */
+    --primary-font: 'Poppins', sans-serif;
+    --header-font: 'Merriweather', serif;
+    --input-font: 'Mulish', sans-serif;
+
+    /* Colours */
+    --bg-colour: #202142;  
+    --text-colour: #000000;
+    --border-outline-colour: #F0F0FF;
+    --grey-fill-colour: #FCFCFF;
+    --white-text-colour: #FCFCFC;
+    --pink-fill-colour: #FF6A95;
+    --pink-outline-colour: #F4CAD1;
+    --white-bg-colour: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, 
+body {
+
+    background-color: var(--bg-colour);
+    font-family: var(--primary-font);
+    color: var(--text-colour);
+}
+
+.feedback {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    width: 75vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-wrapper {
+    background-color: var(--white-bg-colour);
+    border-radius: 1rem;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.popup-header h1 {
+    font-family: var(--header-font);
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 calc(6rem - 2rem);
+}
+
+.popup-wrapper .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.3rem;
+    color: var(--border-outline-colour);
+    cursor: pointer;
+}
+
+.popup-wrapper .close-btn:hover {
+    color: var(--pink-fill-colour);
+    transition: 0.4s ease-in-out;
+}
+
+.rating-wrapper {
+    width: 100%;
+    padding: 2rem 0 1rem 0;
+    margin: 1rem 0;
+}
+
+.ratings {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: var(--grey-fill-colour);
+    border-radius: 50%;
+    outline: 1px solid var(--border-outline-colour);
+    cursor: pointer;
+    margin: 0.15rem;
+    margin-bottom: 0.6rem;
+}
+
+.rating p {
+    z-index: 10;
+}
+
+.rating::after {
+    content: '';
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: var(--pink-fill-colour);
+    color: var(--white-text-colour);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 5;
+    transition: 0.3s ease-in-out;
+}
+
+.rating:hover {
+    outline: none;
+    color: var(--white-text-colour);
+    transition: 0.3s ease-in-out;
+}
+
+.rating:hover::after {
+    opacity: 1;
+    color: var(--white-text-colour);
+    outline: 2px solid var(--pink-outline-colour);
+}
+
+.rating.clicked {
+    outline: none;
+    color: var(--white-text-colour);
+}
+
+.rating.clicked::after {
+    opacity: 1;
+    outline: 2px solid var(--pink-outline-colour);
+}
+
+.ratings-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0.15rem;
+}
+
+.ratings-text small {
+    font-size: 0.65rem;
+}
+
+.popup-input-wrapper {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 0 0.5rem;
+}
+
+.pop-up-input input {
+    -webkit-appearance: none;
+    width: 100%;
+    position: relative;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--border-outline-colour);
+    font-family: var(--input-font);
+    font-size: 0.75rem;
+    color: var(--text-colour);
+}
+
+.pop-up-input input:focus {
+    outline: none;
+    border: 2px solid var(--pink-outline-colour);
+}
+
+.pop-up-input input::placeholder {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pop-up-input button {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    height: 34px;
+    width: 70px;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: var(--bg-colour);
+    font-family: var(--primary-font);
+    font-size: 0.6rem;
+    color: var(--white-text-colour);
+    cursor: pointer;
+}
+
+.pop-up-input button:hover {
+    filter: brightness(140%);
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+.modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.modal.open {
+    z-index: 20;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.modal-wrapper {
+    background-color: var(--white-bg-colour);
+    border-radius: 1rem;
+    padding: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+}
+
+.modal-title h2 {
+    margin-bottom: 1rem;
+}
+
+.feedback-content {
+    width: 100%;
+    margin: 1rem 0 0 0;
+}
+
+.feedback-rating,
+.feedback-comment {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.feedback-comment {
+    align-items: flex-start;
+}
+
+.feedback-rating h5 {
+    margin-right: 2rem;
+}
+
+.feedback-comment h5 {
+    margin-right: 1rem;
+}
+
+.feedback-comment p {
+    font-size: 0.75rem;
+    color: var(--text-colour);
+}
+
+.feedback-rating .rating-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: var(--pink-fill-colour);
+    border-radius: 50%;
+    outline: 2px solid var(--pink-outline-colour);
+    color: var(--white-text-colour);
+    margin: 0.15rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90vw;
+    }
+
+    .ratings {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .rating {
+        margin: 0.5rem;
+    }
+
+    .ratings-text {
+        margin: 0 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .popup-header h1 {
+        padding: 0 calc(2rem - 1rem);
+    }
+
+    .rating-wrapper {
+        padding: 1rem 0;
+    }
+
+    .modal-wrapper {
+        max-width: 350px;
+    }
+
+    .modal-title h2 {
+        font-size: 1.2rem;
+    }
+}
+
+  
+
