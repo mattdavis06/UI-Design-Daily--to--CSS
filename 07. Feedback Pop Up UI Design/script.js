@@ -96,8 +96,5 @@ sendBtn.addEventListener('click', () => {
     toggleModal()
 })
 
-// To Do
-// -----
-// 
 
 
